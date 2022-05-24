@@ -1,0 +1,22 @@
+﻿@model IEnumerable<FilmTanitim.Models.Comment>
+@foreach (var item in Model)
+{
+    <div class="col-12">
+        <b>@item.Movie.MovieName | @item.CommentTitle  <div class="float-right text-warning">@(item.MovieRating/10)/5</div></b>
+    </div>
+    <div class="col-12">
+        @item.CommentDescription
+    </div>
+    <hr />
+    <br />
+
+}
+<script>
+    $(function () {
+
+        $("#rateYoo").rateYo({
+            rating: 3.2,
+            rtl: false
+        });
+    });
+</script>

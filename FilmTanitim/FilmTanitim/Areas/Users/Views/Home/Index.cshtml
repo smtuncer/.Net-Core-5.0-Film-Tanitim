@@ -1,0 +1,27 @@
+﻿@model IEnumerable<FilmTanitim.Models.Movie>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<br />
+<h2 style="text-align:center;" class="text-primary">Film Listesi</h2>
+<br />
+
+<div class="row">
+    <div class="col-3">
+        @await Component.InvokeAsync("CategoryList")
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="@item.MovieImage" style="height:200px" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">@item.MovieName</h5>
+                    <p class="card-text">@item.MovieDescription.Substring(0,50)...</p>
+                    <a asp-action="Details" asp-route-id="@item.MovieId" class="btn btn-primary">Devamını Oku..</a>
+                    <input type="hidden" id="@item.MovieId" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

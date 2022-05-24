@@ -1,0 +1,2 @@
+# .Net-Core-5.0-Film-Tanitim
+.Net Core 5.0 Film Tanitim sitesi . Yorum ve rating sistemi mevcut. Code first ile kurabilirsiniz
